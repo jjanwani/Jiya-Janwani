@@ -1,0 +1,122 @@
+:root {
+  --black: #0a0a0d;
+  --ink: #121218;
+  --deep-blue: #131b3d;
+  --blue: #1d2c63;
+  --blue-light: #3a4f9e;
+  --peach: #ffb98f;
+  --peach-light: #ffd9b8;
+  --peach-deep: #ff8c5a;
+  --cream: #fff3e8;
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root { position: relative; width: 100%; }
+
+h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; }
+p { margin: 0; line-height: 1.6; }
+a { color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+::selection { background: var(--peach); color: var(--black); }
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 8vw;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 5rem 6vw; }
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--peach);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.section-sub {
+  max-width: 640px;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: rgba(255, 243, 232, 0.78);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 185, 143, 0.4);
+  background: rgba(255, 185, 143, 0.08);
+  font-size: 0.8rem;
+  color: var(--peach-light);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 243, 232, 0.6);
+}
+
+.scroll-hint .dot-track {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 243, 232, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-hint .dot-track::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--peach);
+  animation: scrollDot 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0% { top: -100%; }
+  60% { top: 100%; }
+  100% { top: 100%; }
+}

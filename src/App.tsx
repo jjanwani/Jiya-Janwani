@@ -1,6 +1,7 @@
 import Background from './components/Background';
 import SpaceTunnel from './components/SpaceTunnel';
 import ScrollCompanion from './components/ScrollCompanion';
+import CinematicScenes from './components/CinematicScenes';
 import Nav from './components/Nav';
 import Hero from './sections/Hero';
 import Brand from './sections/Brand';
@@ -16,6 +17,7 @@ function App() {
       <Background />
       <SpaceTunnel />
       <ScrollCompanion />
+      <CinematicScenes />
       <Nav />
       <main style={{ position: 'relative', zIndex: 2 }}>
         <Hero />

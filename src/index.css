@@ -8,8 +8,8 @@
   --peach-light: #ffd9b8;
   --peach-deep: #ff8c5a;
   --cream: #fff3e8;
-  --font-display: 'Fredoka', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * { box-sizing: border-box; }

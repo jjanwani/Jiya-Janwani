@@ -10,80 +10,92 @@ interface AvatarProps {
 export default function Avatar({ pose = 'wave', className = '', spin = false, style }: AvatarProps) {
   const armRight =
     pose === 'wave'
-      ? 'M150 150 C 175 130, 185 95, 175 70'
+      ? 'M148 178 C 172 158, 182 120, 172 92'
       : pose === 'point'
-      ? 'M150 150 C 180 145, 200 140, 215 130'
+      ? 'M148 178 C 178 172, 198 165, 213 152'
       : pose === 'jump'
-      ? 'M150 150 C 175 120, 178 90, 165 65'
+      ? 'M148 178 C 170 148, 173 115, 160 88'
       : pose === 'dive'
-      ? 'M150 150 C 168 175, 185 185, 205 180'
-      : 'M150 150 C 170 165, 178 150, 172 130';
+      ? 'M148 178 C 166 200, 183 210, 203 205'
+      : 'M148 178 C 168 192, 176 178, 170 158';
 
   const armLeft =
     pose === 'jump'
-      ? 'M95 150 C 70 120, 67 90, 80 65'
+      ? 'M92 178 C 68 148, 65 115, 78 88'
       : pose === 'dive'
-      ? 'M95 150 C 77 175, 60 185, 40 180'
-      : 'M95 150 C 75 160, 68 175, 72 195';
+      ? 'M92 178 C 75 200, 58 210, 38 205'
+      : 'M92 178 C 73 188, 66 202, 70 222';
 
   return (
     <motion.svg
-      viewBox="0 0 270 320"
+      viewBox="0 0 270 340"
       className={className}
       style={{ overflow: 'visible', ...style }}
-      animate={spin ? { rotate: [0, 8, -8, 0] } : undefined}
+      animate={spin ? { rotate: [0, 6, -6, 0] } : undefined}
       transition={spin ? { duration: 4, repeat: Infinity, ease: 'easeInOut' } : undefined}
     >
       {/* shadow */}
-      <ellipse cx="123" cy="305" rx="58" ry="10" fill="#000" opacity="0.25" />
+      <ellipse cx="120" cy="325" rx="56" ry="9" fill="#000" opacity="0.22" />
 
       {/* legs */}
-      <path d="M105 230 C 100 260, 95 280, 90 300" stroke="#1d2c63" strokeWidth="16" fill="none" strokeLinecap="round" />
-      <path d="M140 230 C 148 260, 155 280, 158 300" stroke="#10173a" strokeWidth="16" fill="none" strokeLinecap="round" />
+      <path d="M103 255 C 99 280, 95 300, 90 318" stroke="#1d2c63" strokeWidth="15" fill="none" strokeLinecap="round" />
+      <path d="M137 255 C 144 280, 150 300, 154 318" stroke="#10173a" strokeWidth="15" fill="none" strokeLinecap="round" />
 
-      {/* torso - peach top */}
-      <path d="M75 150 C 70 200, 80 235, 122 240 C 165 235, 175 200, 170 150 C 150 130, 95 130, 75 150 Z" fill="#ff8c5a" />
+      {/* torso - black tee */}
+      <path d="M73 175 C 68 220, 78 252, 119 257 C 161 252, 170 220, 165 175 C 146 157, 92 157, 73 175 Z" fill="#161616" />
+      <path d="M82 168 L 92 184 L 119 172 L 146 184 L 156 168" stroke="#161616" strokeWidth="6" fill="none" strokeLinecap="round" />
 
       {/* right arm (back) */}
-      <path d={armRight} stroke="#ffb98f" strokeWidth="15" fill="none" strokeLinecap="round" />
+      <path d={armRight} stroke="#161616" strokeWidth="14" fill="none" strokeLinecap="round" />
+      <circle cx={pose === 'wave' ? 172 : pose === 'jump' ? 160 : pose === 'point' ? 213 : pose === 'dive' ? 203 : 170} cy={pose === 'wave' ? 92 : pose === 'jump' ? 88 : pose === 'point' ? 152 : pose === 'dive' ? 205 : 158} r="9" fill="#dba374" />
 
       {/* left arm (front) */}
-      <path d={armLeft} stroke="#ff8c5a" strokeWidth="15" fill="none" strokeLinecap="round" />
+      <path d={armLeft} stroke="#0d0d0d" strokeWidth="14" fill="none" strokeLinecap="round" />
+      <circle cx={pose === 'jump' ? 78 : pose === 'dive' ? 38 : 70} cy={pose === 'jump' ? 88 : pose === 'dive' ? 205 : 222} r="9" fill="#dba374" />
 
       {/* neck */}
-      <rect x="110" y="118" width="26" height="24" fill="#c98a5e" />
+      <rect x="106" y="138" width="28" height="26" fill="#c98a5e" />
 
       {/* head */}
-      <circle cx="123" cy="92" r="52" fill="#dba374" />
+      <circle cx="120" cy="108" r="54" fill="#dba374" />
 
-      {/* hair back/wavy mass behind head */}
+      {/* big wavy hair mass behind/around head */}
       <path
-        d="M70 95 C 58 60, 75 15, 123 12 C 175 14, 192 58, 180 98
-           C 184 120, 178 145, 168 150 C 172 120, 165 100, 160 96
-           C 158 118, 150 132, 140 134 C 146 112, 140 98, 134 96
-           C 132 116, 122 128, 112 128 C 118 110, 114 98, 108 96
-           C 104 116, 92 128, 82 124 C 90 108, 86 96, 80 96
-           C 76 112, 64 120, 60 116 C 66 105, 64 98, 70 95 Z"
-        fill="#161616"
+        d="M48 110
+           C 30 75, 38 25, 90 8
+           C 92 30, 100 38, 112 36
+           C 108 22, 116 10, 130 8
+           C 178 16, 196 60, 182 108
+           C 198 130, 196 175, 178 210
+           C 184 178, 174 150, 162 138
+           C 168 168, 158 198, 142 212
+           C 150 180, 142 152, 130 142
+           C 136 172, 124 202, 108 212
+           C 116 180, 108 152, 96 144
+           C 100 174, 88 204, 70 210
+           C 80 178, 74 148, 62 140
+           C 64 170, 50 196, 34 198
+           C 46 172, 42 144, 48 110 Z"
+        fill="#14110f"
       />
-
-      {/* hair top swoop */}
       <path
-        d="M71 70 C 66 35, 95 10, 123 10 C 153 10, 182 33, 177 68
-           C 165 50, 150 40, 123 40 C 96 40, 80 52, 71 70 Z"
-        fill="#161616"
+        d="M52 95 C 44 58, 68 22, 120 18 C 168 22, 190 56, 184 96
+           C 168 68, 146 52, 120 52 C 94 52, 68 66, 52 95 Z"
+        fill="#14110f"
       />
 
       {/* face features */}
-      <circle cx="103" cy="94" r="6.5" fill="#161616" />
-      <circle cx="143" cy="94" r="6.5" fill="#161616" />
-      <circle cx="101" cy="91" r="2" fill="#fff" />
-      <circle cx="141" cy="91" r="2" fill="#fff" />
-      <path d="M98 76 C 102 72, 108 72, 112 75" stroke="#161616" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <path d="M134 75 C 138 72, 144 72, 148 76" stroke="#161616" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <path d="M112 112 C 118 118, 128 118, 134 112" stroke="#8a4a30" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <circle cx="92" cy="106" r="6" fill="#ff8c5a" opacity="0.45" />
-      <circle cx="154" cy="106" r="6" fill="#ff8c5a" opacity="0.45" />
+      <ellipse cx="100" cy="112" rx="13" ry="15" fill="#fff" />
+      <ellipse cx="146" cy="112" rx="13" ry="15" fill="#fff" />
+      <circle cx="101" cy="114" r="8.5" fill="#3a2415" />
+      <circle cx="147" cy="114" r="8.5" fill="#3a2415" />
+      <circle cx="98" cy="110" r="2.6" fill="#fff" />
+      <circle cx="144" cy="110" r="2.6" fill="#fff" />
+      <path d="M89 93 C 95 87, 104 87, 109 92" stroke="#14110f" strokeWidth="3.4" fill="none" strokeLinecap="round" />
+      <path d="M133 92 C 138 87, 147 87, 153 93" stroke="#14110f" strokeWidth="3.4" fill="none" strokeLinecap="round" />
+      <path d="M114 134 C 120 142, 130 142, 137 134" stroke="#8a4a30" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <circle cx="86" cy="126" r="7" fill="#ff8c5a" opacity="0.4" />
+      <circle cx="158" cy="126" r="7" fill="#ff8c5a" opacity="0.4" />
     </motion.svg>
   );
 }

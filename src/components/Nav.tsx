@@ -4,6 +4,7 @@ const links = [
   { id: 'journey', label: 'Journey' },
   { id: 'projects', label: 'Projects' },
   { id: 'framework', label: 'Framework' },
+  { id: 'community', label: 'Community' },
   { id: 'contact', label: 'Contact' },
 ];
 

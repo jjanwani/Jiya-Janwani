@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 
 const personas = [
-  { name: 'RC — Floor Engineer', need: 'Spends 30–60 min/drone just retrieving info from the drive, struggles to prioritize work orders, inventory is scattered.' },
-  { name: 'Gus — Production Manager', need: 'Needs inventory + KPIs always current; subcomponent revisions and approvals keep slipping through.' },
-  { name: 'Fisher & Alisha — Ops/Logistics', need: 'Manually copies repair materials from Slack into a spreadsheet; too many clicks to update or purchase inventory.' },
+  { name: 'Field Engineer', need: 'Lost 30–60 minutes per unit just retrieving the right info, with no clear way to prioritize open work orders.' },
+  { name: 'Production Manager', need: 'Needed inventory and KPIs to stay current in real time; approvals kept slipping through the cracks.' },
+  { name: 'Ops & Logistics Lead', need: 'Was manually re-entering the same repair-materials data into a spreadsheet, with too many clicks to update or reorder inventory.' },
 ];
 
 const buckets = [
   { name: 'Dashboard', who: 'PMs, production managers', what: 'KPI tracking, deployment status, asset health' },
-  { name: 'Work Orders', who: 'Engineers, ops, production', what: 'Prioritization flags, maintenance vs. build, assigned engineer, time to complete' },
-  { name: 'Inventory', who: 'Ops/logistics, procurement', what: 'Subcomponent revisions, approval steps, flagged reorders' },
-  { name: 'Info Hub', who: 'Engineers, PMs', what: 'Streamlined retrieval from Drive, regulatory + recovery data' },
+  { name: 'Work Orders', who: 'Engineers, ops, production', what: 'Prioritization flags, maintenance vs. build, assigned owner, time to complete' },
+  { name: 'Inventory', who: 'Ops/logistics, procurement', what: 'Component revisions, approval steps, flagged reorders' },
+  { name: 'Info Hub', who: 'Engineers, PMs', what: 'Streamlined retrieval of reference docs, regulatory + recovery data' },
 ];
 
 const otherProjects = [
@@ -56,9 +56,9 @@ export default function Projects() {
         transition={{ delay: 0.1 }}
         style={{ marginBottom: '2.6rem' }}
       >
-        Built at SkySpecs for the team that builds and repairs drones. VORTEX pulls
-        Salesforce, Slack, and Google Drive into one place — and eliminated roughly{' '}
-        <strong style={{ color: 'var(--peach)' }}>150 hours a month</strong> across
+        Built at SkySpecs for the team that builds and repairs their drone fleet. VORTEX
+        brought work orders, assets, and inventory into one shared platform — eliminating
+        roughly <strong style={{ color: 'var(--peach)' }}>150 hours a month</strong> across
         procurement, engineering, and production. Here's the discovery process behind it.
       </motion.p>
 
@@ -139,9 +139,9 @@ export default function Projects() {
         >
           <h3 className="card-title">04 · Shipping in versions, not one big launch</h3>
           <ul className="version-list">
-            <li><strong>v1 (5/11):</strong> stood up Dashboard, Assets, Work Orders, Inventory, Info Hub + Google sign-on; flagged open questions on data ownership.</li>
-            <li><strong>v2 (5/18):</strong> added per-drone time KPIs (MTTR, cycle time), drag-and-drop process view, role-based add/edit flows.</li>
-            <li><strong>v3 (5/27):</strong> migrated to SkySpecs Git + AI dev agent, wired the Google Drive API, added subtask tracking and change history.</li>
+            <li><strong>v1:</strong> stood up the Dashboard, Assets, Work Orders, Inventory, and Info Hub with secure sign-on; flagged open questions on data ownership for the next round.</li>
+            <li><strong>v2:</strong> added per-unit time KPIs (MTTR, cycle time), a drag-and-drop process view, and role-based add/edit flows.</li>
+            <li><strong>v3:</strong> migrated to the team's internal dev tooling, wired in automated document retrieval, and added subtask tracking with full change history.</li>
           </ul>
           <p className="card-copy" style={{ marginTop: '0.8rem' }}>
             Adopted across <strong style={{ color: 'var(--peach)' }}>four teams</strong>,

@@ -61,6 +61,10 @@ button { font-family: var(--font-body); cursor: pointer; }
   font-weight: 700;
   line-height: 1.05;
   margin-bottom: 1.5rem;
+  background: linear-gradient(120deg, var(--peach-light) 0%, var(--cream) 35%, var(--blue-light) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .section-sub {

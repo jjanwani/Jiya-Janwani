@@ -16,15 +16,35 @@ export default function Background() {
     ]
   );
 
+  const auroraX = useTransform(scrollYProgress, [0, 0.5, 1], ['10%', '85%', '30%']);
+  const auroraY = useTransform(scrollYProgress, [0, 0.5, 1], ['15%', '60%', '85%']);
+
   return (
-    <motion.div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 0,
-        background,
-        transition: 'background 0.2s linear',
-      }}
-    />
+    <>
+      <motion.div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 0,
+          background,
+          transition: 'background 0.2s linear',
+        }}
+      />
+      <motion.div
+        style={{
+          position: 'fixed',
+          top: auroraY,
+          left: auroraX,
+          width: '50vw',
+          height: '50vw',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,140,90,0.16) 0%, rgba(58,79,158,0.12) 45%, transparent 75%)',
+          filter: 'blur(60px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+          transform: 'translate(-50%, -50%)',
+        }}
+      />
+    </>
   );
 }

@@ -138,27 +138,27 @@ export default function Journey() {
       </div>
 
       <style>{`
-        .exp-list { display: flex; flex-direction: column; gap: 2.2rem; max-width: 880px; }
+        .exp-list { display: flex; flex-direction: column; gap: 3.5rem; max-width: 880px; }
         .exp-card {
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,185,143,0.18);
-          border-radius: 20px;
-          padding: 2rem 2.2rem;
+          border-radius: 22px;
+          padding: 3rem 3.2rem;
           backdrop-filter: blur(6px);
         }
-        .exp-when { font-size: 0.78rem; color: rgba(255,243,232,0.5); margin: 0.5rem 0 0.2rem; }
-        .exp-head h3 { font-size: 1.4rem; color: var(--peach-light); }
-        .exp-context { color: rgba(255,243,232,0.82); margin: 1rem 0 1.4rem; font-size: 0.95rem; }
+        .exp-when { font-size: 0.78rem; color: rgba(255,243,232,0.5); margin: 0.7rem 0 0.3rem; letter-spacing: 0.05em; }
+        .exp-head h3 { font-size: 1.6rem; color: var(--peach-light); line-height: 1.3; }
+        .exp-context { color: rgba(255,243,232,0.82); margin: 1.4rem 0 2rem; font-size: 1rem; line-height: 1.75; }
         .exp-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1.2rem;
+          gap: 2rem;
           border-top: 1px solid rgba(255,185,143,0.14);
-          padding-top: 1.2rem;
+          padding-top: 1.8rem;
         }
-        @media (max-width: 760px) { .exp-grid { grid-template-columns: 1fr; } .exp-card { padding: 1.5rem; } }
-        .exp-grid h4 { font-size: 0.82rem; color: var(--peach); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
-        .exp-grid p { font-size: 0.86rem; color: rgba(255,243,232,0.75); }
+        @media (max-width: 760px) { .exp-grid { grid-template-columns: 1fr; } .exp-card { padding: 2rem 1.6rem; } }
+        .exp-grid h4 { font-size: 0.82rem; color: var(--peach); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+        .exp-grid p { font-size: 0.9rem; color: rgba(255,243,232,0.75); line-height: 1.7; }
       `}</style>
     </section>
   );

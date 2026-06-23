@@ -75,18 +75,18 @@ export default function Community() {
         .community-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1.3rem;
+          gap: 2rem;
         }
         @media (max-width: 1000px) { .community-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 640px) { .community-grid { grid-template-columns: 1fr; } }
         .community-card {
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(120,150,255,0.2);
-          border-radius: 16px;
-          padding: 1.4rem;
+          border-radius: 18px;
+          padding: 2.2rem;
         }
-        .community-card h3 { font-size: 1.05rem; color: var(--peach-light); margin: 0.6rem 0 0.5rem; }
-        .community-card p { font-size: 0.85rem; color: rgba(255,243,232,0.75); }
+        .community-card h3 { font-size: 1.15rem; color: var(--peach-light); margin: 0.9rem 0 0.7rem; }
+        .community-card p { font-size: 0.9rem; color: rgba(255,243,232,0.75); line-height: 1.7; }
       `}</style>
     </section>
   );

@@ -54,13 +54,24 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        style={{ marginBottom: '2.6rem' }}
+        style={{ marginBottom: '3rem' }}
       >
         Built at SkySpecs for the team that builds and repairs their drone fleet. VORTEX
-        brought work orders, assets, and inventory into one shared platform — eliminating
-        roughly <strong style={{ color: 'var(--peach)' }}>150 hours a month</strong> across
+        brought work orders, assets, and inventory into one shared platform across
         procurement, engineering, and production. Here's the discovery process behind it.
       </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        style={{ marginBottom: '5rem', display: 'flex', alignItems: 'baseline', gap: '1.4rem', flexWrap: 'wrap' }}
+      >
+        <span className="panel-label">150hrs</span>
+        <span style={{ fontSize: '1.05rem', color: 'rgba(255,243,232,0.7)', maxWidth: 280 }}>
+          saved every month across procurement, engineering, and production
+        </span>
+      </motion.div>
 
       <div className="vortex-grid">
         <motion.div
@@ -184,18 +195,18 @@ export default function Projects() {
         .vortex-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.6rem;
+          gap: 2.4rem;
         }
         @media (max-width: 900px) { .vortex-grid { grid-template-columns: 1fr; } }
         .card {
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,185,143,0.18);
           border-radius: 18px;
-          padding: 1.8rem;
+          padding: 2.4rem;
           backdrop-filter: blur(6px);
         }
         .card-title { font-size: 1.1rem; color: var(--peach); margin-bottom: 0.7rem; }
-        .card-copy { font-size: 0.92rem; color: rgba(255,243,232,0.78); }
+        .card-copy { font-size: 0.96rem; color: rgba(255,243,232,0.78); line-height: 1.75; }
         .flow-row { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 1rem; align-items: center; }
         .flow-step { font-size: 0.78rem; background: rgba(58,79,158,0.25); border: 1px solid rgba(58,79,158,0.5); padding: 0.3rem 0.6rem; border-radius: 8px; display: flex; align-items: center; gap: 0.4rem; color: var(--peach-light); }
         .flow-arrow { color: rgba(255,243,232,0.4); }
@@ -205,7 +216,7 @@ export default function Projects() {
         .bucket-who { font-size: 0.72rem; color: rgba(255,243,232,0.55); margin-bottom: 0.2rem; }
         .bucket-what { font-size: 0.8rem; color: rgba(255,243,232,0.8); }
         .version-list { padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; color: rgba(255,243,232,0.8); }
-        .other-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.6rem; }
+        .other-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.4rem; }
         @media (max-width: 900px) { .other-grid { grid-template-columns: 1fr; } }
         .other-card { display: block; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,185,143,0.16); border-radius: 16px; padding: 1.4rem; text-decoration: none; transition: border-color 0.2s ease; }
         .other-card:hover { border-color: rgba(255,185,143,0.5); }

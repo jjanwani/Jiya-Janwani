@@ -39,12 +39,25 @@ button { font-family: var(--font-body); cursor: pointer; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 8vw;
+  padding: 9rem 9vw;
   z-index: 2;
 }
 
 @media (max-width: 768px) {
-  .section { padding: 5rem 6vw; }
+  .section { padding: 6rem 6vw; }
+}
+
+.panel-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 800;
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,185,143,0.35);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  user-select: none;
 }
 
 .eyebrow {
@@ -71,6 +84,7 @@ button { font-family: var(--font-body); cursor: pointer; }
   max-width: 640px;
   font-size: clamp(1rem, 1.3vw, 1.2rem);
   color: rgba(255, 243, 232, 0.78);
+  line-height: 1.8;
 }
 
 .pill {

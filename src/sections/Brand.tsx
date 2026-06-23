@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Avatar from '../components/Avatar';
 
 const constellation = [
   {
@@ -105,14 +104,18 @@ export default function Brand() {
         ))}
 
         <motion.div
-          className="brand-avatar"
+          className="brand-core"
           initial={{ opacity: 0, scale: 0.7 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          animate={{ y: [0, -12, 0] }}
-          transition={{ y: { duration: 3.4, repeat: Infinity, ease: 'easeInOut' } }}
+          animate={{ scale: [1, 1.06, 1] }}
+          transition={{ scale: { duration: 3.4, repeat: Infinity, ease: 'easeInOut' } }}
         >
-          <Avatar pose="think" style={{ width: 130 }} />
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="var(--peach)" strokeWidth="1.4" />
+            <circle cx="12" cy="12" r="3.2" fill="var(--peach)" />
+            <path d="M12 1.5V5M12 19V22.5M1.5 12H5M19 12H22.5" stroke="var(--blue-light)" strokeWidth="1.2" strokeLinecap="round" />
+          </svg>
         </motion.div>
       </div>
 
@@ -158,17 +161,23 @@ export default function Brand() {
           font-size: 0.88rem;
           color: rgba(255,243,232,0.78);
         }
-        .brand-avatar {
+        .brand-core {
           position: absolute;
           bottom: 4%;
           left: 50%;
           transform: translateX(-50%);
+          width: 64px;
+          height: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          filter: drop-shadow(0 0 14px rgba(255,185,143,0.5));
         }
         @media (max-width: 900px) {
           .constellation { height: auto; display: flex; flex-direction: column; gap: 1.4rem; }
           .constellation-lines { display: none; }
           .star-card { position: static; width: 100%; }
-          .brand-avatar { position: static; transform: none; align-self: center; margin-top: 1rem; }
+          .brand-core { position: static; transform: none; align-self: center; margin-top: 1rem; }
         }
       `}</style>
     </section>

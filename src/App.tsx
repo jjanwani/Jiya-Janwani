@@ -1,12 +1,11 @@
+import { Routes, Route } from 'react-router-dom';
 import Background from './components/Background';
 import ParticleField from './components/ParticleField';
 import Nav from './components/Nav';
-import Hero from './sections/Hero';
-import Brand from './sections/Brand';
-import Journey from './sections/Journey';
-import Projects from './sections/Projects';
-import Framework from './sections/Framework';
-import Contact from './sections/Contact';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import Experience from './pages/Experience';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -14,13 +13,13 @@ function App() {
       <Background />
       <ParticleField />
       <Nav />
+      <ScrollToTop />
       <main style={{ position: 'relative', zIndex: 2 }}>
-        <Hero />
-        <Brand />
-        <Journey />
-        <Projects />
-        <Framework />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </main>
     </>
   );

@@ -1,30 +1,25 @@
+import { Routes, Route } from 'react-router-dom';
 import Background from './components/Background';
 import SpaceTunnel from './components/SpaceTunnel';
-import CinematicScenes from './components/CinematicScenes';
 import Nav from './components/Nav';
-import Hero from './sections/Hero';
-import Brand from './sections/Brand';
-import Journey from './sections/Journey';
-import Projects from './sections/Projects';
-import Framework from './sections/Framework';
-import Community from './sections/Community';
-import Contact from './sections/Contact';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import Experience from './pages/Experience';
+import Projects from './pages/Projects';
 
 function App() {
   return (
     <>
       <Background />
       <SpaceTunnel />
-      <CinematicScenes />
       <Nav />
+      <ScrollToTop />
       <main style={{ position: 'relative', zIndex: 2 }}>
-        <Hero />
-        <Brand />
-        <Journey />
-        <Projects />
-        <Framework />
-        <Community />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </main>
     </>
   );

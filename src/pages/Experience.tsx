@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import LogoBadge from '../components/LogoBadge';
 
 const experiences = [
   {
@@ -73,69 +75,91 @@ const experiences = [
   },
 ];
 
-export default function Journey() {
+export default function Experience() {
   return (
-    <section id="journey" className="section">
-      <motion.p className="eyebrow" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-        the journey so far
-      </motion.p>
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        What I walked into, and what I left behind.
-      </motion.h2>
-      <motion.p
-        className="section-sub"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        style={{ marginBottom: '3rem' }}
-      >
-        Five roles, five very different problems. Here's the actual story behind each one —
-        not just the bullet point.
-      </motion.p>
+    <>
+      <header className="detail-header">
+        <Link to="/" className="back-link">← back home</Link>
 
-      <div className="exp-list">
-        {experiences.map((e, i) => (
-          <motion.article
-            key={e.org}
-            className="exp-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.6, delay: 0.05 * i }}
-          >
-            <div className="exp-head">
-              <div>
-                <span className="pill">{e.tag}</span>
-                <p className="exp-when">{e.when}</p>
-                <h3>{e.role} · {e.org}</h3>
-              </div>
-            </div>
+        <motion.p className="eyebrow" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          the journey so far
+        </motion.p>
+        <motion.h1
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: 'clamp(2.4rem, 6vw, 4.4rem)' }}
+        >
+          What I walked into, and what I left behind.
+        </motion.h1>
+        <motion.p
+          className="section-sub"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          Five roles, five very different problems. Here's the actual story behind each one —
+          not just the bullet point.
+        </motion.p>
 
-            <p className="exp-context">{e.context}</p>
+        <div className="logo-strip">
+          <LogoBadge name="SkySpecs" />
+          <LogoBadge name="Carbon Fiber Span" />
+          <LogoBadge name="Ross Tech Plus Consulting" />
+          <LogoBadge name="Hemlock Semiconductor" />
+        </div>
+      </header>
 
-            <div className="exp-grid">
-              <div>
-                <h4>What I walked into</h4>
-                <p>{e.walkedInto}</p>
+      <section className="section" style={{ paddingTop: '1rem' }}>
+        <div className="exp-list">
+          {experiences.map((e, i) => (
+            <motion.article
+              key={e.org}
+              className="exp-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.6, delay: 0.05 * i }}
+            >
+              <div className="exp-head">
+                <div>
+                  <span className="pill">{e.tag}</span>
+                  <p className="exp-when">{e.when}</p>
+                  <h3>{e.role} · {e.org}</h3>
+                </div>
               </div>
-              <div>
-                <h4>How I approached it</h4>
-                <p>{e.approach}</p>
+
+              <p className="exp-context">{e.context}</p>
+
+              <div className="exp-grid">
+                <div>
+                  <h4>What I walked into</h4>
+                  <p>{e.walkedInto}</p>
+                </div>
+                <div>
+                  <h4>How I approached it</h4>
+                  <p>{e.approach}</p>
+                </div>
+                <div>
+                  <h4>What I delivered</h4>
+                  <p>{e.delivered}</p>
+                </div>
               </div>
-              <div>
-                <h4>What I delivered</h4>
-                <p>{e.delivered}</p>
-              </div>
-            </div>
-          </motion.article>
-        ))}
-      </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          style={{ marginTop: '4rem' }}
+        >
+          <Link to="/projects" className="back-link" style={{ marginBottom: 0 }}>
+            see what I've built →
+          </Link>
+        </motion.div>
+      </section>
 
       <style>{`
         .exp-list { display: flex; flex-direction: column; gap: 3.5rem; max-width: 880px; }
@@ -160,6 +184,6 @@ export default function Journey() {
         .exp-grid h4 { font-size: 0.82rem; color: var(--peach); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
         .exp-grid p { font-size: 0.9rem; color: rgba(255,243,232,0.75); line-height: 1.7; }
       `}</style>
-    </section>
+    </>
   );
 }

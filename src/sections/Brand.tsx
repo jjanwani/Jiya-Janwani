@@ -1,39 +1,41 @@
 import { motion } from 'framer-motion';
 
-const constellation = [
+const cards = [
   {
     title: 'User-centered',
-    body:
-      'I don’t start with a feature, I start with a person. Before I touch a roadmap I want to have sat next to the people doing the work, watched where they get stuck, and asked "why" until it stops being polite.',
-    top: '6%',
-    left: '4%',
+    body: "I don't start with a feature, I start with a person. Before I touch a roadmap I want to have sat next to the people doing the work, watched where they get stuck, and asked “why” until it stops being polite.",
+    icon: '◎',
   },
   {
     title: 'Empathetic',
-    body:
-      'Behind every backlog item is someone’s Tuesday afternoon. I design for the engineer who’s tired, the ops lead who’s juggling three systems, the manager who just wants one source of truth.',
-    top: '38%',
-    left: '58%',
+    body: "Behind every backlog item is someone's Tuesday afternoon. I design for the engineer who's tired, the ops lead juggling three systems, the manager who just wants one source of truth.",
+    icon: '❤︎',
   },
   {
     title: 'Technical',
-    body:
-      'I can sit in the data model, read the API docs, and push back on scope with engineers as a peer — not just translate requirements. I’d rather prototype it myself than wait for a slide to explain it.',
-    top: '70%',
-    left: '8%',
+    body: "I can sit in the data model, read the API docs, and push back on scope with engineers as a peer — not just translate requirements. I'd rather prototype it myself than wait for a slide to explain it.",
+    icon: '⬡',
   },
   {
     title: 'Impossible is a starting point',
-    body:
-      'I’ve watched a 4-person team rebuild a process nobody thought could change, just because they believed it could. I build for that moment — give people a reason to believe, and the impossible becomes a backlog.',
-    top: '4%',
-    left: '54%',
+    body: "I've watched a 4-person team rebuild a process nobody thought could change, just because they believed it could. I build for that moment — give people a reason to believe, and the impossible becomes a backlog.",
+    icon: '✦',
   },
 ];
 
 export default function Brand() {
   return (
-    <section id="brand" className="section" style={{ alignItems: 'center', minHeight: '140vh' }}>
+    <section id="brand" className="section" style={{ minHeight: '130vh', gap: '2rem' }}>
+      <motion.span
+        className="panel-label"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        style={{ marginBottom: '-1rem' }}
+      >
+        brand
+      </motion.span>
+
       <motion.p
         className="eyebrow"
         initial={{ opacity: 0, y: -10 }}
@@ -42,142 +44,80 @@ export default function Brand() {
       >
         personal brand
       </motion.p>
+
       <motion.h2
         className="section-title"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        style={{ textAlign: 'center', maxWidth: 760 }}
+        style={{ maxWidth: 680 }}
       >
         Four ideas I orbit around.
       </motion.h2>
+
       <motion.p
         className="section-sub"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        style={{ textAlign: 'center', marginInline: 'auto', marginBottom: '3rem' }}
+        style={{ marginBottom: '3rem' }}
       >
         Not a mission statement — just the four things that show up in how I actually work.
       </motion.p>
 
-      <div className="constellation">
-        <svg className="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <motion.line
-            x1="14" y1="16" x2="66" y2="46"
-            stroke="rgba(255,185,143,0.35)" strokeWidth="0.2"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}
-          />
-          <motion.line
-            x1="66" y1="46" x2="18" y2="78"
-            stroke="rgba(255,185,143,0.35)" strokeWidth="0.2"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }}
-          />
-          <motion.line
-            x1="18" y1="78" x2="62" y2="12"
-            stroke="rgba(120,150,255,0.3)" strokeWidth="0.2"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.4 }}
-          />
-          <motion.line
-            x1="62" y1="12" x2="14" y2="16"
-            stroke="rgba(120,150,255,0.3)" strokeWidth="0.2"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.6 }}
-          />
-        </svg>
-
-        {constellation.map((c, i) => (
+      <div className="brand-grid">
+        {cards.map((c, i) => (
           <motion.div
             key={c.title}
-            className="star-card"
-            style={{ top: c.top, left: c.left }}
-            initial={{ opacity: 0, scale: 0.7, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            className="brand-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.15, duration: 0.6 }}
-            whileHover={{ scale: 1.04, borderColor: 'rgba(255,185,143,0.6)' }}
+            transition={{ delay: i * 0.12, duration: 0.65 }}
+            whileHover={{ y: -6, borderColor: 'rgba(255,185,143,0.55)' }}
           >
-            <span className="star-dot" />
+            <span className="brand-icon">{c.icon}</span>
             <h3>{c.title}</h3>
             <p>{c.body}</p>
           </motion.div>
         ))}
-
-        <motion.div
-          className="brand-core"
-          initial={{ opacity: 0, scale: 0.7 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: [1, 1.06, 1] }}
-          transition={{ scale: { duration: 3.4, repeat: Infinity, ease: 'easeInOut' } }}
-        >
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="var(--peach)" strokeWidth="1.4" />
-            <circle cx="12" cy="12" r="3.2" fill="var(--peach)" />
-            <path d="M12 1.5V5M12 19V22.5M1.5 12H5M19 12H22.5" stroke="var(--blue-light)" strokeWidth="1.2" strokeLinecap="round" />
-          </svg>
-        </motion.div>
       </div>
 
       <style>{`
-        .constellation {
-          position: relative;
+        .brand-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.8rem;
+          max-width: 960px;
           width: 100%;
-          max-width: 1100px;
-          height: 640px;
         }
-        .constellation-lines {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .star-card {
-          position: absolute;
-          width: clamp(220px, 28vw, 320px);
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,185,143,0.22);
-          border-radius: 18px;
-          padding: 1.4rem 1.3rem;
+        @media (max-width: 700px) { .brand-grid { grid-template-columns: 1fr; } }
+        .brand-card {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,185,143,0.2);
+          border-radius: 22px;
+          padding: 2.8rem 2.4rem;
+          text-align: left;
+          transition: border-color 0.25s ease, transform 0.25s ease;
           backdrop-filter: blur(8px);
-          transition: border-color 0.2s ease;
         }
-        .star-dot {
-          position: absolute;
-          top: -5px;
-          left: -5px;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: var(--peach);
-          box-shadow: 0 0 12px 3px rgba(255,185,143,0.6);
+        .brand-icon {
+          display: inline-block;
+          font-size: 1.8rem;
+          color: var(--peach);
+          margin-bottom: 1.1rem;
+          filter: drop-shadow(0 0 8px rgba(255,185,143,0.5));
         }
-        .star-card h3 {
+        .brand-card h3 {
+          font-size: 1.25rem;
           color: var(--peach-light);
-          font-size: 1.1rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.7rem;
         }
-        .star-card p {
-          font-size: 0.88rem;
-          color: rgba(255,243,232,0.78);
-        }
-        .brand-core {
-          position: absolute;
-          bottom: 4%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 64px;
-          height: 64px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          filter: drop-shadow(0 0 14px rgba(255,185,143,0.5));
-        }
-        @media (max-width: 900px) {
-          .constellation { height: auto; display: flex; flex-direction: column; gap: 1.4rem; }
-          .constellation-lines { display: none; }
-          .star-card { position: static; width: 100%; }
-          .brand-core { position: static; transform: none; align-self: center; margin-top: 1rem; }
+        .brand-card p {
+          font-size: 0.93rem;
+          color: rgba(255,243,232,0.75);
+          line-height: 1.75;
         }
       `}</style>
     </section>

@@ -110,8 +110,8 @@ export default function Experience() {
         </div>
       </header>
 
-      <section className="section" style={{ paddingTop: '1rem' }}>
-        <div className="exp-list">
+      <section className="section" style={{ paddingTop: '1rem', alignItems: 'center' }}>
+        <div className="exp-list" style={{ width: '100%' }}>
           {experiences.map((e, i) => (
             <motion.article
               key={e.org}

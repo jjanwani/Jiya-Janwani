@@ -64,7 +64,7 @@ export default function Projects() {
         </motion.p>
       </header>
 
-      <section className="section" style={{ paddingTop: '1rem' }}>
+      <section className="section" style={{ paddingTop: '1rem', alignItems: 'center' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

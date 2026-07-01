@@ -30,25 +30,38 @@ const involvement = [
 
 export default function Community() {
   return (
-    <section id="community" className="section">
+    <section id="community" className="section" style={{ minHeight: '130vh', gap: '2rem' }}>
+      <motion.span
+        className="panel-label"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        style={{ marginBottom: '-1rem' }}
+      >
+        beyond
+      </motion.span>
+
       <motion.p className="eyebrow" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
         beyond the work
       </motion.p>
+
       <motion.h2
         className="section-title"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        style={{ maxWidth: 720 }}
       >
         Community is where I practiced all of this first.
       </motion.h2>
+
       <motion.p
         className="section-sub"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        style={{ marginBottom: '2.6rem' }}
+        style={{ marginBottom: '3rem' }}
       >
         Long before a roadmap, I was learning to lead, listen, and show up for people in
         rooms that had nothing to do with product.
@@ -61,8 +74,8 @@ export default function Community() {
             className="community-card"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ delay: i * 0.08, duration: 0.55 }}
+            viewport={{ once: true, margin: '-8%' }}
+            transition={{ delay: i * 0.09, duration: 0.6 }}
           >
             <span className="pill">{c.role}</span>
             <h3>{c.name}</h3>
@@ -75,18 +88,23 @@ export default function Community() {
         .community-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
+          gap: 1.8rem;
+          max-width: 1100px;
+          width: 100%;
         }
         @media (max-width: 1000px) { .community-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 640px) { .community-grid { grid-template-columns: 1fr; } }
         .community-card {
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(120,150,255,0.2);
-          border-radius: 18px;
-          padding: 2.2rem;
+          border-radius: 20px;
+          padding: 2.4rem 2rem;
+          text-align: left;
+          transition: border-color 0.25s ease;
         }
+        .community-card:hover { border-color: rgba(120,150,255,0.5); }
         .community-card h3 { font-size: 1.15rem; color: var(--peach-light); margin: 0.9rem 0 0.7rem; }
-        .community-card p { font-size: 0.9rem; color: rgba(255,243,232,0.75); line-height: 1.7; }
+        .community-card p { font-size: 0.9rem; color: rgba(255,243,232,0.75); line-height: 1.75; }
       `}</style>
     </section>
   );

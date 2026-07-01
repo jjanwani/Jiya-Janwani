@@ -138,3 +138,130 @@ button { font-family: var(--font-body); cursor: pointer; }
   60% { top: 100%; }
   100% { top: 100%; }
 }
+
+/* ---------- explore cards (home -> detail pages) ---------- */
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 1180px;
+}
+
+@media (max-width: 860px) {
+  .explore-grid { grid-template-columns: 1fr; }
+}
+
+.explore-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  border-radius: 24px;
+  padding: 2.6rem;
+  min-height: 300px;
+  background: linear-gradient(160deg, rgba(58,79,158,0.22), rgba(10,10,13,0.4));
+  border: 1px solid rgba(255,185,143,0.16);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.explore-card:hover {
+  border-color: rgba(255,185,143,0.55);
+  transform: translateY(-6px);
+}
+
+.explore-card .ex-num {
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
+  color: var(--peach);
+  opacity: 0.85;
+}
+
+.explore-card h3 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin: 1.1rem 0 0.9rem;
+  color: var(--cream);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.explore-card p {
+  font-size: 0.98rem;
+  color: rgba(255,243,232,0.72);
+  max-width: 92%;
+  line-height: 1.7;
+}
+
+.explore-card .ex-cta {
+  margin-top: 1.8rem;
+  font-size: 0.85rem;
+  color: var(--peach-light);
+}
+
+.explore-card .ex-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  right: -100px;
+  top: -100px;
+  background: radial-gradient(circle, rgba(255,140,90,0.25), transparent 70%);
+  pointer-events: none;
+}
+
+/* ---------- detail page chrome ---------- */
+
+.detail-header {
+  padding: 9.5rem 9vw 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .detail-header { padding: 7rem 6vw 1.5rem; }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,243,232,0.7);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover { color: var(--peach-light); }
+
+/* ---------- brand / logo strip ---------- */
+
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.logo-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

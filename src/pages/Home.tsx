@@ -14,7 +14,7 @@ export default function Home() {
       <section id="explore" className="section" style={{ minHeight: '120vh', gap: '2rem' }}>
         <motion.span
           className="panel-label"
-          initial={{ opacity: 0, x: 80 }}
+          initial={{ opacity: 0, x: 300 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
@@ -25,7 +25,7 @@ export default function Home() {
 
         <motion.p
           className="eyebrow"
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -300 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
@@ -35,7 +35,7 @@ export default function Home() {
 
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 300 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
@@ -62,8 +62,8 @@ export default function Home() {
               <span className="ex-glow" />
               <span className="ex-num">02 · PROJECTS</span>
               <div>
-                <h3>VORTEX, and a few other things.</h3>
-                <p>A work order, asset &amp; inventory platform that erased ~150 hours/month — plus the consulting and research builds behind it.</p>
+                <h3>VORTEX. BYTE+. Ethical AI. ML classifier. Euchre.</h3>
+                <p>A work order and inventory platform that erased ~150 hours/month, a student consulting platform, an AI governance framework, and more.</p>
               </div>
               <span className="ex-cta">see the build →</span>
             </Link>

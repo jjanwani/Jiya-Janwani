@@ -65,7 +65,7 @@ export default function Framework() {
     <section id="framework" className="section" style={{ minHeight: '130vh', gap: '2rem' }}>
       <motion.span
         className="panel-label"
-        initial={{ opacity: 0, x: 80 }}
+        initial={{ opacity: 0, x: 300 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9 }}
@@ -74,13 +74,13 @@ export default function Framework() {
         process
       </motion.span>
 
-      <motion.p className="eyebrow" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+      <motion.p className="eyebrow" initial={{ opacity: 0, x: -300 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
         how I think
       </motion.p>
 
       <motion.h2
         className="section-title"
-        initial={{ opacity: 0, x: 60 }}
+        initial={{ opacity: 0, x: 300 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}

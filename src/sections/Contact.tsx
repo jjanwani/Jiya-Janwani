@@ -16,12 +16,12 @@ export default function Contact() {
         </svg>
       </motion.div>
 
-      <motion.p className="eyebrow" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+      <motion.p className="eyebrow" initial={{ opacity: 0, x: -300 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
         let's talk
       </motion.p>
       <motion.h2
         className="section-title"
-        initial={{ opacity: 0, x: 60 }}
+        initial={{ opacity: 0, x: 300 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}

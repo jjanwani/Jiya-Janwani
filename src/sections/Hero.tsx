@@ -39,7 +39,7 @@ export default function Hero() {
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(4rem, 11vw, 9rem)',
             fontWeight: 800,
-            lineHeight: 0.95,
+            lineHeight: 1.05,
             letterSpacing: '-0.03em',
             background: 'linear-gradient(135deg, var(--cream) 0%, var(--peach-light) 50%, var(--peach) 100%)',
             backgroundClip: 'text',

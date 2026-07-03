@@ -28,9 +28,10 @@ export default function Brand() {
     <section id="brand" className="section" style={{ minHeight: '130vh', gap: '2rem' }}>
       <motion.span
         className="panel-label"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.9 }}
         style={{ marginBottom: '-1rem' }}
       >
         brand
@@ -38,18 +39,20 @@ export default function Brand() {
 
       <motion.p
         className="eyebrow"
-        initial={{ opacity: 0, y: -10 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
       >
         personal brand
       </motion.p>
 
       <motion.h2
         className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         style={{ maxWidth: 680 }}
       >
         Four ideas I orbit around.
@@ -57,10 +60,10 @@ export default function Brand() {
 
       <motion.p
         className="section-sub"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.15, duration: 0.7 }}
         style={{ marginBottom: '3rem' }}
       >
         Not a mission statement — just the four things that show up in how I actually work.

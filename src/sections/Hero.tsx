@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import LivingCanvas from '../components/LivingCanvas';
 
-const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 28 },
-  animate: { opacity: 1, y: 0 },
-  transition: { delay, duration: 0.75 },
+const slideIn = (delay: number, from: 'left' | 'right' | 'up' = 'up') => ({
+  initial: { opacity: 0, x: from === 'left' ? -50 : from === 'right' ? 50 : 0, y: from === 'up' ? 30 : 0 },
+  animate: { opacity: 1, x: 0, y: 0 },
+  transition: { delay, duration: 0.8 },
 });
 
 export default function Hero() {
@@ -12,7 +12,7 @@ export default function Hero() {
     <section
       id="hero"
       className="section"
-      style={{ minHeight: '100vh', paddingTop: '8rem', gap: 0 }}
+      style={{ minHeight: '100vh', paddingTop: '10rem', paddingBottom: '8rem', gap: 0, justifyContent: 'center' }}
     >
       <LivingCanvas />
 
@@ -22,24 +22,22 @@ export default function Hero() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '0.1rem',
       }}>
         <motion.p
           className="eyebrow"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          style={{ marginBottom: '2rem' }}
+          style={{ marginBottom: '2.5rem' }}
         >
           hey, I'm glad you scrolled by
         </motion.p>
 
-        {/* Big name — nodcoding style */}
         <motion.h1
-          {...fadeUp(0.4)}
+          {...slideIn(0.4, 'up')}
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(3.8rem, 10vw, 8.5rem)',
+            fontSize: 'clamp(4rem, 11vw, 9rem)',
             fontWeight: 800,
             lineHeight: 0.95,
             letterSpacing: '-0.03em',
@@ -47,36 +45,41 @@ export default function Hero() {
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
-            marginBottom: '2.6rem',
+            marginBottom: '3.5rem',
           }}
         >
           Jiya Janwani.
         </motion.h1>
 
-        {/* Staggered one-liner sentences */}
-        <motion.p {...fadeUp(0.65)} style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1.55rem)', color: 'rgba(255,243,232,0.9)', lineHeight: 1.4, marginBottom: '0.5rem' }}>
+        <motion.p {...slideIn(0.65, 'left')} style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.6rem)', color: 'rgba(255,243,232,0.9)', lineHeight: 1.4, marginBottom: '1rem' }}>
           Student at the University of Michigan.
         </motion.p>
-        <motion.p {...fadeUp(0.82)} style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1.55rem)', color: 'var(--peach-light)', lineHeight: 1.4, marginBottom: '0.5rem' }}>
+        <motion.p {...slideIn(0.82, 'right')} style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.6rem)', color: 'var(--peach-light)', lineHeight: 1.4, marginBottom: '1rem' }}>
           Business &amp; Computer Science.
         </motion.p>
-        <motion.p {...fadeUp(0.99)} style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1.55rem)', color: 'rgba(255,243,232,0.6)', lineHeight: 1.4, marginBottom: '2.4rem' }}>
+        <motion.p {...slideIn(0.99, 'left')} style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.6rem)', color: 'rgba(255,243,232,0.55)', lineHeight: 1.4, marginBottom: '3.5rem' }}>
           Interested in product management.
         </motion.p>
 
         <motion.div
-          {...fadeUp(1.18)}
-          style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap', justifyContent: 'center' }}
+          {...slideIn(1.18, 'up')}
+          style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '5rem' }}
         >
           <span className="pill">🎓 Ross + CS, Michigan</span>
           <span className="pill">🛰️ PM Intern @ SkySpecs</span>
           <span className="pill">💃 National Dance Honors Top 10</span>
         </motion.div>
 
-        <div className="scroll-hint" style={{ marginTop: '4rem' }}>
+        {/* scroll hint — inline so it doesn't position:absolute over content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,243,232,0.45)' }}
+        >
           <span>keep scrolling</span>
           <div className="dot-track" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

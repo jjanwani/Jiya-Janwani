@@ -16,24 +16,25 @@ export default function Contact() {
         </svg>
       </motion.div>
 
-      <motion.p className="eyebrow" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+      <motion.p className="eyebrow" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
         let's talk
       </motion.p>
       <motion.h2
         className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         style={{ maxWidth: 760 }}
       >
         Got a problem worth mapping? I'd love to hear about it.
       </motion.h2>
       <motion.p
         className="section-sub"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.15, duration: 0.7 }}
         style={{ marginInline: 'auto', marginBottom: '3rem' }}
       >
         Internships, product chats, or just want to compare notes on user research —

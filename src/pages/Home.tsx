@@ -14,9 +14,10 @@ export default function Home() {
       <section id="explore" className="section" style={{ minHeight: '120vh', gap: '2rem' }}>
         <motion.span
           className="panel-label"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
           style={{ marginBottom: '-1rem' }}
         >
           explore
@@ -24,18 +25,20 @@ export default function Home() {
 
         <motion.p
           className="eyebrow"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
           two stories worth a click
         </motion.p>
 
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           style={{ maxWidth: 700, marginBottom: '2.5rem' }}
         >
           Where I've worked.<br />What I've built.

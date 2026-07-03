@@ -65,23 +65,25 @@ export default function Framework() {
     <section id="framework" className="section" style={{ minHeight: '130vh', gap: '2rem' }}>
       <motion.span
         className="panel-label"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.9 }}
         style={{ marginBottom: '-1rem' }}
       >
         process
       </motion.span>
 
-      <motion.p className="eyebrow" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+      <motion.p className="eyebrow" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
         how I think
       </motion.p>
 
       <motion.h2
         className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         style={{ maxWidth: 680 }}
       >
         My product thinking framework
@@ -89,10 +91,10 @@ export default function Framework() {
 
       <motion.p
         className="section-sub"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.15, duration: 0.7 }}
         style={{ marginBottom: '3.5rem' }}
       >
         This is the loop I ran while building VORTEX, and the one I default to on every

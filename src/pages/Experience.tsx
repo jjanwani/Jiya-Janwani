@@ -1,22 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import LogoBadge from '../components/LogoBadge';
 
 const experiences = [
-  {
-    when: 'Jun 2024 — Dec 2024',
-    role: 'Associate',
-    org: 'Acosta Development',
-    context:
-      'Acosta Development works on real estate projects across Michigan, where every deal depends on getting zoning, deed, and environmental details right before a single shovel hits the ground.',
-    walkedInto:
-      'Developers across the state were re-doing the same regulatory research project after project, with no shared reference for the zoning and environmental review steps that came up again and again.',
-    approach:
-      'I synthesized zoning regulations, deed records, and environmental review data into a single plain-language reference guide, built for a developer reading it at 11pm before a permitting deadline. I also created intake forms within the guidebook so developers could submit the correct applications and receive guidance tailored to their specific project type.',
-    delivered:
-      "The Developer's Guidebook, now used by 100+ Michigan-based developers. The intake forms cut back-and-forth on application submissions and gave developers a clearer path from first question to final permit.",
-    tag: 'Research',
-  },
   {
     when: 'May 2025 — Aug 2025',
     role: 'Accounting and Finance Intern',
@@ -58,6 +43,20 @@ const experiences = [
     delivered:
       'One shared dashboard that cut manual reporting effort by 30% and gave leadership a single number to plan around instead of three conflicting ones.',
     tag: 'Operations + PM',
+  },
+  {
+    when: 'Jun 2024 — Dec 2024',
+    role: 'Associate',
+    org: 'Acosta Development',
+    context:
+      'Acosta Development works on real estate projects across Michigan, where every deal depends on getting zoning, deed, and environmental details right before a single shovel hits the ground.',
+    walkedInto:
+      'Developers across the state were re-doing the same regulatory research project after project, with no shared reference for the zoning and environmental review steps that came up again and again.',
+    approach:
+      'I synthesized zoning regulations, deed records, and environmental review data into a single plain-language reference guide, built for a developer reading it at 11pm before a permitting deadline. I also created intake forms within the guidebook so developers could submit the correct applications and receive guidance tailored to their specific project type.',
+    delivered:
+      "The Developer's Guidebook, now used by 100+ Michigan-based developers. The intake forms cut back-and-forth on application submissions and gave developers a clearer path from first question to final permit.",
+    tag: 'Research',
   },
   {
     when: 'May 2026 — Present',
@@ -102,12 +101,6 @@ export default function Experience() {
           Five roles, five very different problems. Here's the actual story behind each one; not just the bullet point.
         </motion.p>
 
-        <div className="logo-strip">
-          <LogoBadge name="SkySpecs" />
-          <LogoBadge name="Carbon Fiber Span" />
-          <LogoBadge name="Ross Tech Plus Consulting" />
-          <LogoBadge name="Hemlock Semiconductor" />
-        </div>
       </header>
 
       <section className="section" style={{ paddingTop: '1rem', alignItems: 'center' }}>

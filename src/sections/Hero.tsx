@@ -30,7 +30,7 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.6 }}
           style={{ marginBottom: '2.5rem' }}
         >
-          hey, I'm glad you scrolled by
+          hi, thanks for scrolling by!
         </motion.p>
 
         {/* Extra padding so gradient clip doesn't cut ascenders/descenders */}
@@ -54,13 +54,13 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p {...slideIn(0.65, 'left')} style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.6rem)', color: 'rgba(255,243,232,0.9)', lineHeight: 1.4, marginBottom: '1rem' }}>
-          I build products people actually want to use.
+          A student at Umich studying Business + CS.
         </motion.p>
         <motion.p {...slideIn(0.82, 'right')} style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.6rem)', color: 'var(--peach-light)', lineHeight: 1.4, marginBottom: '1rem' }}>
-          Michigan Ross + CS, class of 2027.
+          Interested in product management and how thoughtful innovation can change lives.
         </motion.p>
         <motion.p {...slideIn(0.99, 'left')} style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.6rem)', color: 'rgba(255,243,232,0.55)', lineHeight: 1.4, marginBottom: '3.5rem' }}>
-          Product management is where I belong.
+          Keep scrolling to learn more!
         </motion.p>
 
         <motion.div

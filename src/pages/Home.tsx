@@ -49,7 +49,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          hey, I'm glad you scrolled by
+          hi, thanks for scrolling by!
         </motion.p>
 
         <motion.h1
@@ -59,7 +59,7 @@ export default function Home() {
           className="huge-title"
           style={{ maxWidth: 1000 }}
         >
-          Hi, I'm <span style={{ color: 'var(--peach)' }}>Jiya</span>.
+          My name is <span style={{ color: 'var(--peach)' }}>Jiya</span>.
         </motion.h1>
 
         <motion.p
@@ -69,8 +69,8 @@ export default function Home() {
           className="section-sub"
           style={{ marginTop: '1.6rem', textAlign: 'center', marginInline: 'auto' }}
         >
-          Michigan student studying Business &amp; Computer Science. I build products,
-          map messy processes, and ship things teams actually use.
+          A student at Umich studying Business + CS, interested in product management
+          and how thoughtful innovation can change lives. Keep scrolling to learn more!
         </motion.p>
 
         <motion.div
